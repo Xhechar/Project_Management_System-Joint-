@@ -1,0 +1,1 @@
+CREATE DATABASE if not exists project_management_system;
