@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* *********************MAIN CONTAINER***************************** */
+.main{
+    width: 100%;
+    box-sizing: border-box;
+}
+.topbar{
+    height: 3rem;
+    width: 100%;
+    background-color: #6666ff;
+    position: fixed;
+    z-index: 2;
+}
+.topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.topbar > h3{
+    margin-left: 20px;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+.topbar #mailMessage{
+    color: white;
+    margin-left: 40rem;
+}
+.topbar > .profile-area{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    gap: 10px;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+.profile-area > img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+/* ************SIDEBAR*************** */
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    height: 100vh;
+    padding-top: 5rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5 linear;
+    background-color: #333333;
+}
+.sidebar > .home{
+    height: 2.5rem;
+    background-color: #ff3333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+.sidebar > p{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+.sidebar > .home > p{
+    text-transform: capitalize;
+}
+.sidebar > .create-project{
+    height: 2.5rem;
+    background-color: #333333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    text-transform: capitalize;
+}
+.sidebar >.create-project:hover{
+    background-color: black;
+}
+.sidebar > .update-project{
+    height: 2.5rem;
+    background-color: #333333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: capitalize;
+}
+.sidebar >.update-project:hover{
+    background-color: black;
+}
+.sidebar > .delete-project{
+    height: 2.5rem;
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: capitalize;
+}
+.sidebar >.delete-project:hover{
+    background-color: black;
+}
+.sidebar > .logout{
+    height: 2.5rem;
+    background-color: #6666ff;
+    text-transform: capitalize;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar > .logout:hover{
+    background-color: blue;
+}
+/* *********************MAIN CONTENT*********************** */
+.card-section{
+    background-color: #ffffff;
+    margin-left: 8rem;
+    padding-top: 6rem;
+    padding-left: 4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+.card-section > .card1, .card3{
+    background-color: #ff3333;
+    width: 12rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+.cardEven{
+    background-color: #6666ff;
+}
+.card-section > .card1 > p{
+    background-color: #ffffff;
+    font-weight: bold;
+}
+.card1 > .number-item{
+    background-color: #d6d9df;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.card1 > .number-item .icon{
+    font-size: xx-large;
+    color: #666666;
+}
+.card1 > .number-item > .itemNumber{
+    font-size: xx-large;
+    color: #666666;
+}
+
+/* *****************TABLES OF USERS AND PROJECTS ******************* */
+.visibility-Area{
+    display: flex;
+    gap: 1rem;
+    margin-left: 8rem;
+    padding-left: 4rem;
+    padding-right: 2rem;
+
+}
+.tables{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.tables > .userTable{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.tables > .userTable >p{
+    font-size: x-large;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+table{
+    border: 1px solid #ccc;
+    width: 35rem;
+}
+table th{
+    background-color: #6666ff;
+    height: 2rem;
+    font-size: large;
+    color: #fff;
+    margin: auto;
+    
+}
+table tr:nth-child(even){
+    background-color:  #F5F5DC;
+}
+table tr:nth-child(odd){
+    background-color: #FFC0CB;
+}
+.visibility-Area > .assigment{
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 1px 1px 2px 1px #d6d9df;
+    background-color: #F8F8FF;
+    margin-bottom: 2rem;
+}
+.assigment > .dropdowns{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+.userDropDown, .projectDropDown{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.projectDropDown, .userDropDown > label{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: blue;
+}
+.assigment button {
+    margin-top: 12rem;
+    height: 3rem;
+    width: 12rem;
+    background-color: #6666ff;
+    border: none;
+    color: #fff;
+    font-size: large;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.assigment button:hover{
+    background-color: blue;
+}
