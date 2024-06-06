@@ -283,3 +283,98 @@ table tr:hover {
 .assigment button:hover {
     background-color: blue;
 }
+@media (max-width: 768px) {
+    .topbar h3, .topbar .profile-area, .topbar #mailMessage {
+        margin-left: 0;
+    }
+    .sidebar {
+        width: 100px;
+        padding-top: 3rem;
+    }
+    .sidebar > p {
+        margin-left: 1rem;
+    }
+    .sidebar > .logout {
+        margin-top: 5rem;
+    }
+    .card-section {
+        margin-left: 6rem;
+        padding-left: 2rem;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .visibility-Area {
+        flex-direction: column;
+        margin-left: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .visibility-Area .tables {
+        width: 100%;
+    }
+    .visibility-Area .assigment {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 1rem;
+    }
+    .topbar h3 {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+    .topbar #mailMessage {
+        margin-left: 0;
+    }
+    .topbar .profile-area {
+        margin-right: 0;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+    .sidebar {
+        width: 80px;
+    }
+    .sidebar .home, .sidebar .create-project, .sidebar .update-project, .sidebar .delete-project, .sidebar .logout {
+        height: 2rem;
+    }
+    .sidebar p {
+        margin-left: 0.5rem;
+    }
+    .card-section {
+        margin-left: 4rem;
+        padding-left: 1rem;
+        gap: 1rem;
+    }
+    .card-section .card1, .card-section .cardEven {
+        width: 8rem;
+        height: 4rem;
+    }
+    .visibility-Area {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .visibility-Area .tables, .visibility-Area .assigment {
+        width: 100%;
+    }
+    .tables .userTable, .tables .projectTable {
+        gap: 0.5rem;
+    }
+    .tables .userTable p, .tables .projectTable p {
+        font-size: 1rem;
+    }
+    .assigment .dropdowns {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .assigment button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

@@ -5,9 +5,9 @@ dotenv.config();
 
 //Creating an sql configuration for connecting to the database
 export const sqlConfigure = {
-  user: process.env.DB_USER as string,
-  password: process.env.DB_PWD as string,
-  database: process.env.DB_NAME as string,
+  user: process.env.DB_USER2 as string,
+  password: process.env.DB_PWD2 as string,
+  database: process.env.DB_NAME2 as string,
   server: process.env.MY_SERVER as string,
   pool: {
     max: 10,
