@@ -29,7 +29,7 @@ export class userService{
 
             if(!lodash.isEmpty(phoneNoExists)){
                 return {
-                    error: "Phone number already in use"
+                    error: "Phone number already in use. Try Another number"
                 }
             }
 
