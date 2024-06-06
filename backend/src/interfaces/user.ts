@@ -1,11 +1,16 @@
 export interface User {
-  user_id: string,
+  id: string,
   FirstName: string,
   LastName: string,
   phone_number:string,
   email:string,
   password:string,
-  user_profile:string[],
-  project_id:string
-  project_status: boolean
+  user_image:string,
+  project_id:string,
+  isAssignedProject: string
+}
+
+export interface login_details{
+  email:string,
+  password:string
 }
