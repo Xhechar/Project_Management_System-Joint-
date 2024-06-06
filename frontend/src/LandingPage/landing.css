@@ -1,137 +1,148 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('https://i.pinimg.com/564x/bf/77/e2/bf77e239c70f81b4747bd78029c99503.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
-    height:100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    color: #333;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color:#1679AB; */
-    color: #fff;
-    padding: 1em 0;
-    width:80%;
-    margin: 0 auto;
+    padding: 20px;
+    background-color: #1679AB;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .logo h1 {
-    margin: 0;
+.logo h1 {
+    font-size: 24px;
 }
 
-header nav ul {
+nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    gap: 20px;
 }
 
-header nav ul li {
-    margin-left: 1em;
-}
-
-header nav ul li a {
-    color: #fff;
+nav ul li a {
     text-decoration: none;
-}
-
-main {
-    width: 80%;
-    margin: 0 auto;
+    color: white;
+    font-weight: 500;
 }
 
 .welcome-section {
     text-align: center;
-    /* margin-bottom: 2em; */
-    margin-top: 10%;
-    color: whitesmoke;
+    padding: 100px 20px;
+    background-image: url('https://i.pinimg.com/564x/bf/77/e2/bf77e239c70f81b4747bd78029c99503.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: white;
 }
-.pulse{
-    color:#007BFF;
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
+
+.welcome-section h1,
+.welcome-section p {
+    position: relative;
+    z-index: 1;
+}
+
 .cta-buttons {
-    margin-top: 1em;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-buttons button {
-    margin: 0 1em;
-    padding: 1em;
-    width:100px;
-    border-radius: 15px;
-    cursor: pointer;
-    background-color: rgb(26, 25, 25);
-    border:2px solid white;
-    color: white;
-}
-
-.cta-buttons button:hover{
-    background-color:#007BFF ;
-    color: white;
+    padding: 10px 20px;
     border: none;
-}
-.features-overview ul {
-    list-style: none;
-    padding: 0;
-}
-.features-overview ul li {
-    margin-bottom: 0.5em;
-}
-
-.form-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-}
-
-.form {
-    width: 300px;
-    padding: 1em;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #1679AB;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 10px;
 }
 
-.form.hidden {
-    display: none;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5em;
-}
-
-form input {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
+.features-overview {
+    padding: 50px 20px;
+    background: #ffffff;
     text-align: center;
 }
 
-footer .contact-info,
-footer .legal-links {
-    margin-bottom: 1em;
+.features-title {
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
-footer .legal-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 0.5em;
+.features-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #1679AB;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.contact-section {
+    padding: 50px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1679AB;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }
