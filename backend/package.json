@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "tsc --watch",
+    "watch": "nodemon dist/server.js",
     "test": ""
   },
   "keywords": [
