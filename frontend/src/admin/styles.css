@@ -1,217 +1,242 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-/* *********************MAIN CONTAINER***************************** */
-.main{
-    width: 100%;
     box-sizing: border-box;
 }
-.topbar{
+ 
+body {
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+    height: 100vh;
+}
+ 
+/* ************ TOPBAR *************** */
+.topbar {
     height: 3rem;
     width: 100%;
     background-color: #6666ff;
-    position: fixed;
-    z-index: 2;
-}
-.topbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: fixed;
 }
-.topbar > h3{
-    margin-left: 20px;
+ 
+.topbar h3 {
     color: #fff;
-    font-family: 'Times New Roman', Times, serif;
 }
-.topbar #mailMessage{
+ 
+.topbar #mailMessage {
     color: white;
-    margin-left: 40rem;
 }
-.topbar > .profile-area{
+ 
+.profile-area {
     display: flex;
     align-items: center;
-    margin-right: 20px;
     gap: 10px;
     color: #fff;
-    font-family: 'Times New Roman', Times, serif;
 }
-.profile-area > img{
+ 
+.profile-area img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
 }
-/* ************SIDEBAR*************** */
-.sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 130px;
-    height: 100vh;
-    padding-top: 5rem;
-    color: #fff;
-    overflow: hidden;
-    transition: all 0.5 linear;
-    background-color: #333333;
-}
-.sidebar > .home{
-    height: 2.5rem;
-    background-color: #ff3333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 2rem;
-}
-.sidebar > p{
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-    text-transform: capitalize;
-}
-.sidebar > .home > p{
-    text-transform: capitalize;
-}
-.sidebar > .create-project{
-    height: 2.5rem;
-    background-color: #333333;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    text-transform: capitalize;
-}
-.sidebar >.create-project:hover{
-    background-color: black;
-}
-.sidebar > .update-project{
-    height: 2.5rem;
-    background-color: #333333;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-transform: capitalize;
-}
-.sidebar >.update-project:hover{
-    background-color: black;
-}
-.sidebar > .delete-project{
-    height: 2.5rem;
-    background-color: #333333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-transform: capitalize;
-}
-.sidebar >.delete-project:hover{
-    background-color: black;
-}
-.sidebar > .logout{
-    height: 2.5rem;
-    background-color: #6666ff;
-    text-transform: capitalize;
-    margin-top: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.sidebar > .logout:hover{
-    background-color: blue;
-}
-/* *********************MAIN CONTENT*********************** */
-.card-section{
-    background-color: #ffffff;
-    margin-left: 8rem;
-    padding-top: 6rem;
-    padding-left: 4rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 4rem;
-    margin-bottom: 2rem;
-}
-.card-section > .card1, .card3{
-    background-color: #ff3333;
-    width: 12rem;
-    height: 6rem;
+ 
+/* ************ MAIN CONTAINER *************** */
+.main {
     display: flex;
     flex-direction: column;
+    height: 100%; /* Ensure the main container takes full height */
+}
+.bodyContent {
+    display: flex;
+    flex: 1; /* Ensure bodyContent takes the remaining height */
+    width: 100%;
+}
+ 
+/* ************ SIDEBAR *************** */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 15%;
+    height: 100%; /* Ensure sidebar takes full height */
+    padding-top: 6rem;
+    color: #fff;
+    overflow-y: auto;
+    position: fixed;
+    background-color: #333333;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+ 
+.sidebar > .home {
+    height: 2.5rem;
+    /* background-color: #ff3333; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+ 
+.sidebar p {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+ 
+.sidebar .create-project,
+.sidebar .update-project,
+.sidebar .delete-project {
+    height: 2.5rem;
+    background-color: #333333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
     justify-content: start;
     gap: 10px;
+    text-transform: capitalize;
+    cursor: pointer;
 }
-.cardEven{
+ 
+.sidebar .logout {
+    height: 2.5rem;
+    width:100%;
     background-color: #6666ff;
-}
-.card-section > .card1 > p{
-    background-color: #ffffff;
-    font-weight: bold;
-}
-.card1 > .number-item{
-    background-color: #d6d9df;
-    height: 6rem;
+    text-transform: capitalize;
+    margin-top: 15rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-
+    cursor: pointer;
+   
 }
-.card1 > .number-item .icon{
-    font-size: xx-large;
-    color: #666666;
+ 
+/* ************ CONTENT SECTION *************** */
+.mainContent {
+    flex-grow: 1;
+    /* overflow-y: scroll;  */
+    padding: 1rem;
+    margin-left: 15%;
+    margin-top: 3rem;
 }
-.card1 > .number-item > .itemNumber{
-    font-size: xx-large;
-    color: #666666;
-}
-
-/* *****************TABLES OF USERS AND PROJECTS ******************* */
-.visibility-Area{
+.content {
     display: flex;
-    gap: 1rem;
-    margin-left: 8rem;
-    padding-left: 4rem;
-    padding-right: 2rem;
-
+    flex: 1;
 }
-.tables{
+ 
+.card-section,
+.tables {
+    flex: 1;
+}
+ 
+.card-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 30px;
+}
+ 
+.card1,
+.card3 {
+     /* background-color: #333333;; */
+     color:white;
+    width: 20%;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+ 
+.card1:hover,
+.card3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+ 
+.card-section .card1 p,
+.card-section .card3 p {
+    color: #333;
+    font-weight: bold;
+}
+ 
+.number-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+ 
+.number-item .icon {
+    font-size: 1.5rem;
+    color: #ccc;
+    color: white;
+}
+ 
+.number-item .itemNumber {
+    font-size: 1.5rem;
+    /* color: #666; */
+}
+ 
+.tables {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-.tables > .userTable{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+ 
+.tables .userTable {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.tables > .userTable >p{
-    font-size: x-large;
+ 
+.tables .userTable p {
+    font-size: 1.2rem;
     font-weight: bold;
     text-transform: capitalize;
 }
-table{
+ 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+ 
+table th,
+table td {
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    width: 35rem;
+    text-align: left;
 }
-table th{
+ 
+table th {
     background-color: #6666ff;
-    height: 2rem;
-    font-size: large;
     color: #fff;
-    margin: auto;
-    
 }
-table tr:nth-child(even){
-    background-color:  #F5F5DC;
+ 
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
-table tr:nth-child(odd){
-    background-color: #FFC0CB;
+ 
+table tr:hover {
+    background-color: #f2f2f2;
 }
-.visibility-Area > .assigment{
+ 
+.visibility-Area {
+    display: flex;
+    margin-top: 80px;
+    width: 100%;
+}
+ 
+.visibility-Area > .assigment {
     width: 35rem;
     display: flex;
     flex-direction: column;
@@ -221,22 +246,26 @@ table tr:nth-child(odd){
     background-color: #F8F8FF;
     margin-bottom: 2rem;
 }
-.assigment > .dropdowns{
+ 
+.assigment > .dropdowns {
     display: flex;
     justify-content: center;
     gap: 5rem;
 }
-.userDropDown, .projectDropDown{
+ 
+.userDropDown, .projectDropDown {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.projectDropDown, .userDropDown > label{
+ 
+.projectDropDown, .userDropDown > label {
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     color: blue;
 }
+ 
 .assigment button {
     margin-top: 12rem;
     height: 3rem;
@@ -250,7 +279,8 @@ table tr:nth-child(odd){
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
-.assigment button:hover{
+ 
+.assigment button:hover {
     background-color: blue;
 }
 @media (max-width: 768px) {
