@@ -1,6 +1,6 @@
-interface Project {
-    id:string;
-    title:string;
-    description:string;
-    start_date:Date;
+ export interface Project {
+    project_id:string;
+    project_name:string;
+    project_description:string;
+    project_end_date:string;
 }

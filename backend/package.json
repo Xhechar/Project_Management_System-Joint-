@@ -4,7 +4,9 @@
   "description": "A project managemant Dashboard for both admin and user",
   "main": "server.js",
   "scripts": {
-    "build": "tsc --watch",
+    "start:build": "tsc --watch",
+    "start:run": "nodemon dist/server.js",
+    "start": "concurrently npm:start:*",
     "test": ""
   },
   "keywords": [

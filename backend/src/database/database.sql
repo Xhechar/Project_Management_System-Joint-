@@ -1,1 +1,3 @@
-CREATE DATABASE if not exists project_management_system;
+CREATE DATABASE project_management_system;
+
+SELECT * FROM project_table;
