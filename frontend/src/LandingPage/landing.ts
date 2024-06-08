@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (loginBtn) {
         loginBtn.addEventListener('click', () => {
-            window.location.href = "../authentication/login/log.html";
+            window.location.href = "../login/log.html";
         });
     }
 });
