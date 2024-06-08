@@ -1,4 +1,4 @@
-import mssql from 'mssql';
+import mssql, { pool } from 'mssql';
 import {v4} from 'uuid'
 import { Project } from '../interfaces/project.interface';
 import { sqlConfigure } from '../config/server.config';
@@ -98,6 +98,25 @@ export class ProjectService {
       await pool.request().query(`DELETE FROM project_table WHERE project_id = '${project_id}'`);
       return {
         message: "Project(s) deleted successfully ..."
+      }
+    }
+
+  }
+
+  async getProjectByID(project_id: string) {
+    
+    let pool = await mssql.connect(sqlConfigure);
+
+    let response = await (await pool.request().query(`SELECT * FROM project_table WHERE project_id = '${project_id}'`)).recordset;
+
+    if (response.length < 1) {
+      return {
+        error: "Sorry there are no results for the project specified."
+      }
+    }
+    else {
+      return {
+        project: response[0]
       }
     }
 

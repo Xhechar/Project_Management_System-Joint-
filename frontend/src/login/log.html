@@ -24,14 +24,18 @@
         <div id="register-form" class="form-container hidden">
             <h2>Register</h2>
             <form>
+                <label for="register-firstname">Firstname</label>
+                <input type="text" id="register-firstname" name="register-firstname" required>
+                <label for="register-lastname">Lastname</label>
+                <input type="text" id="register-lastname" name="register-lastname" required>
                 <label for="register-username">Username</label>
                 <input type="text" id="register-username" name="register-username" required>
+                <label for="register-email">Email</label>
+                <input type="register-email" name="register-email" required>
                 <label for="register-password">Password</label>
                 <input type="password" id="register-password" name="register-password" required>
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
-                <label for="register-email">Email</label>
-                <input type="register-email" name="register-email" required>
                 <p id="error-message" class="error hidden">Passwords do not match</p>
                 <button type="submit">Register</button>
             </form>

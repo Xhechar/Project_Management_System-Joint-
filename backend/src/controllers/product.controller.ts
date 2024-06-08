@@ -82,3 +82,19 @@ export const removeProject = async(req: Request, res: Response) => {
   }
 
 }
+
+export const fetchProjectByID = async (req: Request, res: Response) => {
+  
+  try {
+    let project_id = req.params.project_id;
+
+    let result = await productSetter.getProjectByID(project_id);
+
+    return res.json(result)
+  } catch (error) {
+    return res.json({
+      error: error
+    })
+  }
+
+}
