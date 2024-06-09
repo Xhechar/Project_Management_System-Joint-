@@ -2,9 +2,9 @@ POST http://localhost:5302/projects/new-project
 Content-Type: application/json
 
 {
-  "project_name": "To Do List Project",
+  "project_name": "X Application with good UI",
   "project_description": "Come up with an interactive UI that is well intergrated with backend-API",
-  "project_end_date": "2024-06-05"
+  "project_end_date": "2024-06-23"
 }
 
 ### Fetch All Projects Created
@@ -12,15 +12,19 @@ GET http://localhost:5302/projects/all-projects
 Content-Type: application/json
 
 ### Update Project by ID
-PUT http://localhost:5302/projects/update-project/0e7ded6c-bd0c-4d73-87e2-24d3d8c38d5d
+PUT http://localhost:5302/projects/update-project/e3bd2ac3-b700-4822-adb8-fb4829a60976
 Content-Type: application/json
 
 {
-  "project_name": "Project Management System",
+  "project_name": "Project Account System",
   "project_description": "Design an MSSQL database backend API",
-  "project_end_date": "2025-05-10"
+  "project_end_date": "2025-06-12"
 }
 
 ### Delete project from database
-DELETE http://localhost:5302/projects/delete-project/0e7ded6c-bd0c-4d73-87e2-24d3d8c38d5d
+DELETE http://localhost:5302/projects/delete-project/42932349-c04e-4f4f-ae88-1b4011349a87
+Content-Type: application/json
+
+### Get project by ID
+GET http://localhost:5302/projects/one-project/42932349-c04e-4f4f-ae88-1b4011349a87
 Content-Type: application/json

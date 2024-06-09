@@ -1,0 +1,14 @@
+# POST Request
+POST http://localhost:5300/users/create
+Content-Type: application/json
+
+{
+    "FirstName": "Felix",
+    "LastName": "Okoth",
+    "phone_number": "0724345355",
+    "email":  "felixokoth078@gmail.com",
+    "password": "2121",
+    "user_image": "image4",
+    "project_id":"",
+    "isAssignedProject": "false"
+}
