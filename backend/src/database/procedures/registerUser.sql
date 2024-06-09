@@ -8,6 +8,7 @@ CREATE OR ALTER PROCEDURE registerUser(
     @user_image VARCHAR (255),
     @project_id VARCHAR(255),
     @isAssignedProject VARCHAR(255)
+    
 )
 AS
 BEGIN
