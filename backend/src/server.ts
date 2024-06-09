@@ -1,20 +1,33 @@
 import express, { NextFunction, Request, Response, json } from "express";
+import cors from 'cors'
 import user_router from "./routers/user.router";
+import auth_router from "./routers/auth.router"; // Import the auth router
 
+const app = express();
+app.use(json());
+app.use(cors())
 
-const app = express()
+// Add both user and auth routers
+app.use('/users', user_router);
+app.use('/auth', auth_router); // Use the auth router for authentication routes
 
-app.use(json())
-app.use('/users', user_router)
+// Add logging middleware to capture request details
+app.use((req: Request, res: Response, next: NextFunction) => {
+    console.log(`Received ${req.method} request for ${req.url}`);
+    next();
+});
 
-app.use((err:Error, req:Request, res:Response, next:NextFunction) => {
-    res.json({
+// Error handling middleware
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error(err.stack);
+    res.status(500).json({
         message: err.message
-    })
-})
+    });
+});
 
-let PORT = 5300
-
-app.listen(5300, ()=>{
+const PORT = 5300;
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT} ...`);
-})
+});
+
+
