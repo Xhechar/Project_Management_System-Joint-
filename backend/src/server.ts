@@ -1,9 +1,11 @@
 import express, { NextFunction, Request, Response, json } from "express";
+import cors from 'cors'
 import user_router from "./routers/user.router";
 import auth_router from "./routers/auth.router"; // Import the auth router
 
 const app = express();
 app.use(json());
+app.use(cors())
 
 // Add both user and auth routers
 app.use('/users', user_router);
