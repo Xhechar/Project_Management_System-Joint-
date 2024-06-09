@@ -17,8 +17,9 @@ export class userService{
 
         if(pool.connected){
             //check if email exists
-            let emailExists = (await pool.request().query(`SELECT * FROM Users WHERE email = '${user.email}`)).recordset
+            let emailExists = (await pool.request().input('email', mssql.NVarChar, user.email).query('SELECT * FROM Users WHERE email = @email')).recordset
 
+            
             if(!lodash.isEmpty(emailExists)){
                 return{
                     error: "Email already in use"

@@ -9,6 +9,8 @@
             password VARCHAR(255) NOT NULL,
             user_image VARCHAR(255) NOT NULL,
             project_id VARCHAR(255),
-            isAssignedProject VARCHAR(25)
+            isAssignedProject VARCHAR(25),
+            isActive BIT default 0
           )
         END
+      
