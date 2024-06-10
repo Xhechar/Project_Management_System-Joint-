@@ -1,10 +1,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const loginBtn = document.getElementById('login-btn') as HTMLButtonElement;
+    const registerBtn = document.getElementById('register-btn') as HTMLButtonElement;
 
-    if (loginBtn) {
-        loginBtn.addEventListener('click', () => {
-            window.location.href = "../login/log.html";
+    if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+            window.location.href = "register.html";
         });
     }
 });
@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const loginButton = document.getElementById('login-btn') as HTMLButtonElement | null;
 if (loginButton) {
     loginButton.addEventListener('click', () => {
-        window.location.href = '/login/login.html';
+        window.location.href = 'log.html';
     });
 }

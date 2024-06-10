@@ -4,44 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="stylez.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="container">
         <div id="login-form" class="form-container active">
             <h2>Login</h2>
-            <form>
-                <label for="login-username">Username</label>
-                <input type="text" id="login-username" name="login-username" required>
+            <form id="loginForm">
                 <label for="login-email">Email</label>
-                <input type="email" id="login-email" name="login-email" required>
+                <input type="text" id="login-email" name="login-email">
+                <p id="email-error"></p>
                 <label for="login-password">Password</label>
-                <input type="password" id="login-password" name="login-password" required>
-                <button type="submit">Login</button>
+                <input type="password" id="login-password" name="login-password">
+                <input type="submit" value="Submit">
             </form>
-            <p>Not registered yet? <button id="show-register" type="button">Sign Up</button></p>
-        </div>
-        <div id="register-form" class="form-container hidden">
-            <h2>Register</h2>
-            <form>
-                <label for="register-firstname">Firstname</label>
-                <input type="text" id="register-firstname" name="register-firstname" required>
-                <label for="register-lastname">Lastname</label>
-                <input type="text" id="register-lastname" name="register-lastname" required>
-                <label for="register-username">Username</label>
-                <input type="text" id="register-username" name="register-username" required>
-                <label for="register-email">Email</label>
-                <input type="register-email" name="register-email" required>
-                <label for="register-password">Password</label>
-                <input type="password" id="register-password" name="register-password" required>
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-                <p id="error-message" class="error hidden">Passwords do not match</p>
-                <button type="submit">Register</button>
-            </form>
-            <p>Already have an account? <button id="show-login" type="button">Login</button></p>
-        </div>
+            <p class="text">Not registered yet? <button id="show-register" type="button">Sign Up</button></p>
     </div>
-    <script src="../../dist/login/log.js"></script>
+    <script type="module" src="./dist/loginpart.js"></script>
+    <script type="module" src="./dist/log.js"></script>
 </body>
 </html>

@@ -19,13 +19,31 @@
 .success-msg {
     background-color: rgb(34, 232, 34);
     text-align: center;
-    padding: 10px;
+    align-self: flex-start;
+    padding: 15px;
+    margin: auto;
+    border-radius: 10px;
     color: #fff;
+    display: none;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     margin-top: 1rem; /* Reduced margin */
     margin-bottom: 1rem; /* Reduced margin */
+}
+.error-msg{
+    background-color: rgb(242, 68, 68);
+    align-self: flex-start;
+    color: #fff;
+    font-size: large;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 15px;
+    margin: auto;
+    display: none;
+    font-size: 12px;
+    border-radius: 10px;
 }
 input[type="text"], input[type="password"] {
     height: 1.5rem; /* Reduced height */

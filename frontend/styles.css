@@ -109,14 +109,14 @@ body {
     background-color: #6666ff;
     text-transform: capitalize;
     margin-top: 15rem;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    cursor: pointer;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
-    cursor: pointer;
-   
 }
- 
+
 /* ************ CONTENT SECTION *************** */
 .mainContent {
     flex-grow: 1;

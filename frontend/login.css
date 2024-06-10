@@ -24,10 +24,6 @@ body {
     display: block;
 }
 
-.hidden {
-    display: none;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -44,16 +40,15 @@ input {
     border-radius: 4px;
 }
 
-button {
-    padding: 10px;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
+#email-error{
+    font-size: 16px;
+    color: red;
+    text-align: center;
 }
 
 
-p {
+
+.text {
     text-align: center;
 }
 
@@ -63,17 +58,15 @@ p {
     cursor: pointer;
 }
 
-#show-register:hover, #show-login:hover {
-    text-decoration: underline;
-}
-form button{
+input[type="submit"]{
     background-color:blue;
     padding: 10px;
     border: none;
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 1.6rem;
 }
-form button:hover{
-        background-color:red;
+input[type="submit"]:hover{
+        background-color: rgb(120, 120, 240);
 }
