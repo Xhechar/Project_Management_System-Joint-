@@ -7,7 +7,8 @@ export interface User {
   password:string,
   user_image:string,
   project_id:string,
-  isAssignedProject: string
+  isAssignedProject: string,
+  isCreated: boolean;
 }
 
 export interface login_details{

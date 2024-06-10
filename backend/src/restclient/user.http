@@ -3,12 +3,12 @@ POST http://localhost:5300/users/create
 Content-Type: application/json
 
 {
-    "FirstName": "Felix",
-    "LastName": "Okoth",
-    "phone_number": "0724345355",
-    "email":  "felixokoth078@gmail.com",
-    "password": "2121",
-    "user_image": "image4",
-    "project_id":"",
-    "isAssignedProject": "false"
+    "FirstName": "Salome",
+    "LastName": "Mwati",
+    "phone_number": "0794776976",
+    "email":  "sonniewati38@gmail.com",
+    "password": "6767",
+    "user_image": "image1",
+    "project_id":null,
+    "isAssignedProject": ""
 }

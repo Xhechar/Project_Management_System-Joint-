@@ -34,17 +34,19 @@ export class userService{
                 }
             }
 
+            // let createdAt = new Date(); // Declare and initialize the 'createdAt' variable with the current timestamp
             let result = (await pool.request()
-            .input("id", mssql.VarChar, user_id)
-            .input("FirstName", user.FirstName)
-            .input("LastName", user.LastName)
-            .input("phone_number", user.phone_number)
-            .input("email", user.email)
-            .input("password", user.password)
-            .input("user_image", user.user_image)
-            .input("project_id", user.project_id)
-            .input("isAssignedProject", user.isAssignedProject)
-            .execute("registerUser")).rowsAffected
+                       
+                        .input("id", mssql.VarChar, user_id)
+                        .input("FirstName", user.FirstName)
+                        .input("LastName", user.LastName)
+                        .input("phone_number", user.phone_number)
+                        .input("email", user.email)
+                        .input("password", hashedPassword)  // Use hashed password here
+                        .input("user_image", user.user_image)
+                        .input("project_id", user.project_id || null)
+                        .input("isAssignedProject", user.isAssignedProject|| '0')
+                        .execute("registerUser")).rowsAffected;
 
             if(result[0] = 1){
                 return{
