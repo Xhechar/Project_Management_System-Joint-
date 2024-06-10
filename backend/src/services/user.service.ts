@@ -4,62 +4,98 @@ import {v4} from 'uuid'
 import bcrypt from 'bcryptjs'
 
 import { sqlConfig } from '../config/sql.config';
-import { User } from '../interfaces/user';
+import { User } from '../interfaces/user.interface';
+
 
 
 export class userService{
+    async fetchSingleUser(user_id: string) {
+        let pool = await mssql.connect(sqlConfig);
 
-    async registerUser(user:User){
-        let pool = await mssql.connect(sqlConfig)
+        let result = (await pool.request()
+            .input("user_id", mssql.VarChar, user_id)
+            .execute("fetchSingleUser")).recordset;
 
-        let user_id = v4()
-        let hashedPassword = bcrypt.hashSync(user.password, 6)
+        if (result.length === 0) {
+            return {
+                error: "User not found"
+            };
+        } else {
+            return {
+                user: result[0]
+            };
+        }
+    }
+    async switchRoles(user_id: string) {
+        let pool = await mssql.connect(sqlConfig);
 
-        if(pool.connected){
-            //check if email exists
-            let emailExists = (await pool.request().query(`SELECT * FROM Users WHERE email = '${user.email}`)).recordset
+        let result = (await pool.request()
+            .input("user_id", mssql.VarChar, user_id)
+            .execute("switchRoles")).rowsAffected;
 
-            if(!lodash.isEmpty(emailExists)){
-                return{
+        if (result[0] === 1) {
+            return {
+                message: "Role switched successfully"
+            };
+        } else {
+            return {
+                error: "Unable to switch role"
+            };
+        }
+    }
+
+    async registerUser(user: User) {
+        let pool = await mssql.connect(sqlConfig);
+
+        let user_id = v4();
+        let hashedPassword = bcrypt.hashSync(user.password, 6);
+        let createdAt = new Date();  // Set the current timestamp
+
+        if (pool.connected) {
+            // Check if email exists
+            let emailExists = (await pool.request().query(`SELECT * FROM Users WHERE email = '${user.email}'`)).recordset;
+
+            if (!lodash.isEmpty(emailExists)) {
+                return {
                     error: "Email already in use"
-                }
+                };
             }
 
-            let phoneNoExists = (await pool.request().query(`SELECT * FROM Users WHERE phone_number = '${user.phone_number}'`)).recordset
+            let phoneNoExists = (await pool.request().query(`SELECT * FROM Users WHERE phone_number = '${user.phone_number}'`)).recordset;
 
-            if(!lodash.isEmpty(phoneNoExists)){
+            if (!lodash.isEmpty(phoneNoExists)) {
                 return {
-                    error: "Phone number already in use. Try Another number"
-                }
+                    error: "Phone number already in use"
+                };
             }
 
             let result = (await pool.request()
-            .input("id", mssql.VarChar, user_id)
-            .input("FirstName", user.FirstName)
-            .input("LastName", user.LastName)
-            .input("phone_number", user.phone_number)
-            .input("email", user.email)
-            .input("password", user.password)
-            .input("user_image", user.user_image)
-            .input("project_id", user.project_id)
-            .input("isAssignedProject", user.isAssignedProject)
-            .execute("registerUser")).rowsAffected
+                .input("id", mssql.VarChar, user_id)
+                .input("FirstName", user.FirstName)
+                .input("LastName", user.LastName)
+                .input("phone_number", user.phone_number)
+                .input("email", user.email)
+                .input("password", hashedPassword)  // Use hashed password here
+                .input("user_image", user.user_image)
+                .input("project_id", user.project_id)
+                .input("isAssignedProject", user.isAssignedProject)
+                .input("createdAt", mssql.DateTime, createdAt)  // Provide the current timestamp
+                .execute("registerUser")).rowsAffected;
 
-            if(result[0] = 1){
-                return{
+            if (result[0] == 1) {
+                return {
                     message: "Account created successfully"
-                }
-            }else{
-                return{
+                };
+            } else {
+                return {
                     error: "Unable to create Account"
-                }
+                };
             }
-        }else{
-            return{
+        } else {
+            return {
                 error: "Unable to establish connection"
-            }
+            };
         }
-        
     }
 
     async fetchAllUsers(){
