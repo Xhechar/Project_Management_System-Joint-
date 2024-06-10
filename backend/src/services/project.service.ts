@@ -122,4 +122,43 @@ export class ProjectService {
 
   }
 
+  async fetchUnAssignedProjects() {
+
+    let pool = await mssql.connect(sqlConfigure);
+
+    let response = (await pool.request().query('SELECT * FROM project_table WHERE isAssignedProject = 0')).recordset;
+
+    if (response.length < 1) {
+      return {
+        error: "No items to display"
+      }
+    }
+
+    else {
+      return {
+        projects: response
+      }
+    }
+  }
+
+  async setAssigned(project_id: string) {
+
+    let pool = await mssql.connect(sqlConfigure);
+
+    let project_response = (await pool.request().query(`UPDATE project_table SET isAssignedProject = 1 WHERE project_ = '${project_id}'`)).rowsAffected;
+    // let user_response = (await pool.request().query(`UPDATE users SET isAssignedProject = 'true' WHERE LastName = '${user_name}'`)).rowsAffected;
+
+    if (project_response[0] < 1) {
+      return {
+        error: "Unable to assign project."
+      }
+    }
+    else {
+      return {
+        message: "Project assigned seccessfully"
+      }
+    }
+
+  }
+
 }
