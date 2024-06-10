@@ -2,9 +2,9 @@ POST http://localhost:5302/projects/new-project
 Content-Type: application/json
 
 {
-  "project_name": "X Application with good UI",
+  "project_name": "Instagram Application with good UI",
   "project_description": "Come up with an interactive UI that is well intergrated with backend-API",
-  "project_end_date": "2024-06-23"
+  "project_end_date": "2025-01-22"
 }
 
 ### Fetch All Projects Created
@@ -12,12 +12,12 @@ GET http://localhost:5302/projects/all-projects
 Content-Type: application/json
 
 ### Update Project by ID
-PUT http://localhost:5302/projects/update-project/e3bd2ac3-b700-4822-adb8-fb4829a60976
+PUT http://localhost:5302/projects/update-project/65b789c4-1e08-4337-8c18-e2bb38d5b247
 Content-Type: application/json
 
 {
-  "project_name": "Project Account System",
-  "project_description": "Design an MSSQL database backend API",
+  "project_name": "Jacket Account System",
+  "project_description": "Design an MySQL database backend API",
   "project_end_date": "2025-06-12"
 }
 
@@ -27,4 +27,12 @@ Content-Type: application/json
 
 ### Get project by ID
 GET http://localhost:5302/projects/one-project/42932349-c04e-4f4f-ae88-1b4011349a87
+Content-Type: application/json
+
+### Get un Assigned Projects
+GET http://localhost:5302/projects/unassigned-projects
+Content-Type: application/json
+
+### Update asssigned project
+PUT http://localhost:5302/projects/assign-project/65b789c4-1e08-4337-8c18-e2bb38d5b247
 Content-Type: application/json

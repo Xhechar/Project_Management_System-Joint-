@@ -1,25 +1,26 @@
-<<<<<<< HEAD
-import express, { NextFunction, Request, Response, json } from "express";
-import user_router from "./routers/user.router";
+// <<<<<<< HEAD
+// import express, { NextFunction, Request, Response, json } from "express";
+// import user_router from "./routers/user.router";
 
+// const app = express()
 
-const app = express()
+// app.use(json())
+// app.use('/users', user_router)
 
-app.use(json())
-app.use('/users', user_router)
+// app.use((err:Error, req:Request, res:Response, next:NextFunction) => {
+//     res.json({
+//         message: err.message
+//     })
+// })
 
-app.use((err:Error, req:Request, res:Response, next:NextFunction) => {
-    res.json({
-        message: err.message
-    })
-})
+// let PORT = 5300
 
-let PORT = 5300
+// app.listen(5300, ()=>{
+//     console.log(`Server running on port ${PORT} ...`);
+// })
+// =======
 
-app.listen(5300, ()=>{
-    console.log(`Server running on port ${PORT} ...`);
-})
-=======
+import cors from "cors";
 import express, {
   NextFunction,
   Request,
@@ -32,6 +33,13 @@ import { my_route } from "./routers/project.route";
 const app = express();
 
 app.use(json());
+app.use(function (req: Request, res: Response, next: NextFunction) {
+  res.header("Access-Control-Allow-Origin", "*")
+
+  next()
+})
+// app.use(cors( ));
+
 app.use("/projects", my_route);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -45,4 +53,3 @@ let PORT = 5302;
 app.listen(5302, () => {
   console.log(`Server running on port ${PORT} ...`);
 });
->>>>>>> 161261a74040669d8eebdf25a8b5e3e63e14193f
